@@ -1,6 +1,8 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import { HashRouter } from 'react-router-dom';
+import { StyleSheetManager } from 'styled-components'
+import isPropValid from '@emotion/is-prop-valid'
 import App from './App';
 import AutoScreen from './components/autoScreen';
 import 'normalize.css';
@@ -10,7 +12,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Suspense fallback="loading...">
     <HashRouter>
-      <AutoScreen Elem={App} />
+      <StyleSheetManager shouldForwardProp={isPropValid}>
+        <AutoScreen Elem={App} />
+      </StyleSheetManager>
     </HashRouter>
   </Suspense>
 );
