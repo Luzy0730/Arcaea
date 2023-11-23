@@ -273,8 +273,8 @@ export const StartupWrapper = styled.div`
   }
   @keyframes glass_wp {
     0% {
-      opacity: 1;
-      transform: scale(1);
+      opacity: 0.8;
+      transform: scale(.7);
     }
     100% {
       opacity: 1;
