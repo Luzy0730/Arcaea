@@ -159,7 +159,7 @@ export const StartupWrapper = styled.div`
         height: 100%;
         filter: brightness(1.2);
         background: url(${require("assets/image/startup/main_glass.png")}) no-repeat center/cover;
-        animation: glass 2.5s ease-in-out 19.5s infinite;
+        animation: glass 2.5s ease-in-out 20s infinite;
         &::after {
           content: "";
           position: absolute;
@@ -171,7 +171,7 @@ export const StartupWrapper = styled.div`
           opacity: 0.4;
           filter: brightness(1.5);
           background: url(${require("assets/image/startup/main_glass.png")}) no-repeat center/cover;
-          animation: glass_gl 2.5s ease-in-out infinite;
+          animation: glass_gl 2.5s ease-in-out 20s infinite;
         }
       }
     }
@@ -224,9 +224,9 @@ export const StartupWrapper = styled.div`
       filter: brightness(1);
     }
     70% {
-      transform: scale(1.03);
+      transform: scale(1.04);
       opacity: 0.5;
-      filter: brightness(2);
+      filter: brightness(3);
     }
     100% {
       transform: scale(1.01);
@@ -282,9 +282,9 @@ export const StartupWrapper = styled.div`
     }
   }
   @keyframes glass {
-    0% {transform: scale(1.12);}
-    70% { transform: scale(1.17);}
-    100% {transform: scale(1.12);; }
+    0% {transform: scale(1);}
+    70% { transform: scale(1.05);}
+    100% {transform: scale(1);; }
   }
   @keyframes glass_gl {
     0% {transform: scale(1.01);}
