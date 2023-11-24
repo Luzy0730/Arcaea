@@ -15,7 +15,7 @@ export const StartupWrapper = styled.div`
 
     .start-icon-wrapper {
       opacity: 1;
-      animation: si_wp 1s 1s forwards;
+      animation: si_wp 2s forwards;
       .start_wreath {
         position: absolute;
         top: 55%;
