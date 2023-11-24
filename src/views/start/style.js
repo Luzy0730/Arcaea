@@ -109,7 +109,7 @@ export const StartupWrapper = styled.div`
       width: 100%;
       height: 100%;
       background: url(${require("assets/image/startup/1080/char_t.png")}) no-repeat center/cover;
-      animation: chart 5s ease-out 20s infinite;
+      animation: chart 5s ease-out 20.3s infinite;
     }
     .char_h_wp {
       opacity: 0;
@@ -123,7 +123,7 @@ export const StartupWrapper = styled.div`
         width: 100%;
         height: 100%;
         background: url(${require("assets/image/startup/1080/char_h.png")}) no-repeat center/cover;
-        animation: chart 4.9s ease-out 20s infinite;
+        animation: chart 5s ease-out 20s infinite;
       }
     }
     .copy {
