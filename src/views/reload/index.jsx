@@ -9,16 +9,20 @@ const Reload = memo(() => {
     current: 0,
     total: 0
   })
+
   useEffect(() => {
     const loader = new ResLoader({
-      resources: preloadImages.Start,
+      resources: [...preloadImages.Common, ...preloadImages.Startup],
       onStart: function (total) {
         console.log('start:' + total);
-        setDuration({ ...duration, total })
+        setDuration(preDuration => {
+          return { ...preDuration, total }
+        })
       },
       onProgress: function (current, total) {
-        console.log(current + '/' + total);
-        setDuration({ ...duration, ...{ current, total } })
+        setDuration(preDuration => {
+          return { ...preDuration, ...{ current, total } }
+        })
       },
       onComplete: function (total) {
         console.log('加载完毕:' + total + '个资源');
@@ -26,7 +30,8 @@ const Reload = memo(() => {
       }
     })
     loader.start()
-  }, [])
+  }, [navigate])
+
   return (
     <div>
       加载图片资源...

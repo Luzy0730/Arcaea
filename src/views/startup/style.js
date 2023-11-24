@@ -7,7 +7,7 @@ export const StartupWrapper = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
-    background-image: url(${require("assets/image/startup/1080/bg.jpg")});
+    background-image: url("/image/startup/1080/bg.jpg");
     background-position-y: 0%;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -23,7 +23,7 @@ export const StartupWrapper = styled.div`
         transform: translate(-50%,-50%);
         width: 8.31rem;
         height: 8.21rem;
-        background: url(${require("assets/image/startup/start_wreath.png")}) no-repeat center/cover;
+        background: url("/image/startup/start_wreath.png") no-repeat center/cover;
       }
       .start_icon {
         position: absolute;
@@ -32,7 +32,7 @@ export const StartupWrapper = styled.div`
         transform: translate(-50%,-50%) rotateY(0deg);
         width: 4.2rem;
         height: 4.2rem;
-        background: url(${require("assets/image/startup/start_icon.png")}) no-repeat center/cover;
+        background: url("/image/startup/start_icon.png") no-repeat center/cover;
         animation: si_ry 1s ;
       }
     }
@@ -51,15 +51,15 @@ export const StartupWrapper = styled.div`
       }
       .m1 {
         animation : pq_m 2s ease-in-out 6s forwards;
-        background: url(${require("assets/image/startup/m1.png")}) no-repeat center/cover;
+        background: url("/image/startup/m1.png") no-repeat center/cover;
       }
       .m2 { 
         animation : pq_m 2s ease-in-out 8s forwards;
-        background: url(${require("assets/image/startup/m2.png")}) no-repeat center/cover;
+        background: url("/image/startup/m2.png") no-repeat center/cover;
       }
       .m3 {
         animation : pq_m 2s ease-in-out 10s forwards;
-         background: url(${require("assets/image/startup/m3.png")}) no-repeat center/cover;
+         background: url("/image/startup/m3.png") no-repeat center/cover;
       }
     }
     .title {
@@ -70,7 +70,7 @@ export const StartupWrapper = styled.div`
       transform: translateX(-50%) rotateY(0deg);
       width: 13.52rem;
       height: 3.9rem;
-      background: url(${require("assets/image/startup/1080/title.png")}) no-repeat center/cover;
+      background: url("/image/startup/1080/title.png") no-repeat center/cover;
       animation: tl 4s ease-in-out 14s forwards;
       &::after{
         content: "";
@@ -79,7 +79,7 @@ export const StartupWrapper = styled.div`
         left: 0;
         width: 100%;
         height: 100%;
-        background: url(${require("assets/image/startup/1080/title_glow.png")}) no-repeat center/cover;
+        background: url("/image/startup/1080/title_glow.png") no-repeat center/cover;
         transform: scale(1.01);
         opacity: 0;
         filter: brightness(1);
@@ -108,7 +108,7 @@ export const StartupWrapper = styled.div`
     .char_t {
       width: 100%;
       height: 100%;
-      background: url(${require("assets/image/startup/1080/char_t.png")}) no-repeat center/cover;
+      background: url("/image/startup/1080/char_t.png") no-repeat center/cover;
       animation: chart 5s ease-out 20.3s infinite;
     }
     .char_h_wp {
@@ -122,7 +122,7 @@ export const StartupWrapper = styled.div`
       .char_h {
         width: 100%;
         height: 100%;
-        background: url(${require("assets/image/startup/1080/char_h.png")}) no-repeat center/cover;
+        background: url("/image/startup/1080/char_h.png") no-repeat center/cover;
         animation: chart 5s ease-out 20s infinite;
       }
     }
@@ -133,7 +133,7 @@ export const StartupWrapper = styled.div`
       left: 1%;
       width: 2.07rem;
       height: 0.32rem;
-      background: url(${require("assets/image/startup/copyright.png")}) no-repeat center/cover;
+      background: url("/image/startup/copyright.png") no-repeat center/cover;
       animation: appear 0.5s 18.5s forwards;
     }
     .manufacturer {
@@ -143,7 +143,7 @@ export const StartupWrapper = styled.div`
       right: 1%;
       width: 2.2rem;
       height: 0.96rem;
-      background: url(${require("assets/image/startup/lowiro_white.png")}) no-repeat center/cover;
+      background: url("/image/startup/lowiro_white.png") no-repeat center/cover;
       animation: appear 0.5s 18.5s forwards;
     }
     .glass_wp {
@@ -158,7 +158,7 @@ export const StartupWrapper = styled.div`
         width: 100%;
         height: 100%;
         filter: brightness(1.2);
-        background: url(${require("assets/image/startup/main_glass.png")}) no-repeat center/cover;
+        background: url("/image/startup/main_glass.png") no-repeat center/cover;
         animation: glass 2.5s ease-in-out 20s infinite;
         &::after {
           content: "";
@@ -170,7 +170,7 @@ export const StartupWrapper = styled.div`
           transform: scale(1.01);
           opacity: 0.4;
           filter: brightness(1.5);
-          background: url(${require("assets/image/startup/main_glass.png")}) no-repeat center/cover;
+          background: url("/image/startup/main_glass.png") no-repeat center/cover;
           animation: glass_gl 2.5s ease-in-out 20s infinite;
         }
       }

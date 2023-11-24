@@ -1,6 +1,6 @@
 import React from "react"
-const Start = React.lazy(() => import('@/views/start/index.jsx'))
-const Reload = React.lazy(() => import('@/views/reload/index.jsx'))
+import Reload from '@/views/reload/index.jsx'
+import Startup from '@/views/startup/index.jsx'
 
 const routes = [
   {
@@ -9,7 +9,7 @@ const routes = [
   },
   {
     path: '/start',
-    element: <Start />
+    element: <Startup />
   }
 ]
 
