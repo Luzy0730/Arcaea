@@ -11,10 +11,6 @@ import AutoScreen from './components/autoScreen';
 import 'normalize.css';
 import './assets/css/index.less';
 
-// 字体包引入
-import './assets/fonts/GeosansLight.ttf'
-import './assets/fonts/GeosansLight-Oblique.ttf'
-
 import store from './store';
 
 // 绑定全局配置

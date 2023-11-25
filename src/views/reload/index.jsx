@@ -1,7 +1,8 @@
 import React, { memo, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import ResLoader from '@/utils/ResLoader'
+import { useDispatch } from 'react-redux'
 import { preloadImages } from '@/config/resource.config'
+import { preloadResource } from '@/store/modules/system'
 
 const Reload = memo(() => {
   const navigate = useNavigate()
@@ -10,27 +11,26 @@ const Reload = memo(() => {
     total: 0
   })
 
+  const dispatch = useDispatch()
   useEffect(() => {
-    const loader = new ResLoader({
-      resources: [...preloadImages.Common, ...preloadImages.Startup],
-      onStart: function (total) {
-        console.log('start:' + total);
+    dispatch(preloadResource([
+      [...preloadImages.Common, ...preloadImages.Startup],
+      function (total) {
+        console.log('加载完毕:' + total + '个资源');
+        navigate('/start')
+      },
+      function (total) {
         setDuration(preDuration => {
           return { ...preDuration, total }
         })
       },
-      onProgress: function (current, total) {
+      function (current, total) {
         setDuration(preDuration => {
           return { ...preDuration, ...{ current, total } }
         })
       },
-      onComplete: function (total) {
-        console.log('加载完毕:' + total + '个资源');
-        navigate('/start')
-      }
-    })
-    loader.start()
-  }, [navigate])
+    ]))
+  }, [navigate, dispatch])
 
   return (
     <div>

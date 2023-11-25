@@ -4,10 +4,12 @@ import { shallowEqual, useSelector } from 'react-redux'
 import { AppWrapper } from './style'
 import routes from './router/index'
 import SceneShutter from './components/sceneShutter'
+import ResourceLoaded from './components/resourceLoaded'
 
 const App = memo(() => {
-  const { sceneShutterState } = useSelector(state => ({
-    sceneShutterState: state.system.sceneShutterState
+  const { sceneShutterState, resourceLoadedState } = useSelector(state => ({
+    sceneShutterState: state.system.sceneShutterState,
+    resourceLoadedState: state.system.resourceLoadedState
   }), shallowEqual)
 
   return (
@@ -17,6 +19,7 @@ const App = memo(() => {
           {useRoutes(routes)}
         </div>
         <SceneShutter loaded={sceneShutterState} />
+        <ResourceLoaded loaded={resourceLoadedState} />
       </div>
     </AppWrapper>
   )

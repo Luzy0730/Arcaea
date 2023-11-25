@@ -1,19 +1,19 @@
 import React, { memo, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { setSceneShutterState } from '@/store/modules/system'
+import { preloadImages } from '@/config/resource.config'
+import { HomeWrapper } from './style'
+import usePreload from '@/hooks/usePreload'
 
 const Home = memo(() => {
-  const dispath = useDispatch()
+  const preload = usePreload([preloadImages.Home])
+
   useEffect(() => {
-    async function wait() {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      dispath(setSceneShutterState(false))
-    }
-    wait()
-  }, [dispath])
+    preload()
+  }, [preload])
 
   return (
-    <div>Home</div>
+    <HomeWrapper>
+      <div className='home'>Home</div>
+    </HomeWrapper>
   )
 })
 

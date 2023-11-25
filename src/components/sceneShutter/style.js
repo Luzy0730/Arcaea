@@ -17,7 +17,7 @@ export const SceneShutterWrapper = styled.div`
       width: 19.5rem;
       height: 100%;
       transform: rotateX(180deg);
-      background: url("/image/layouts/loaded/shutter_l.png") no-repeat center/cover;
+      background: url("/image/layouts/shutter/shutter_l.png") no-repeat center/cover;
       background-position: -20rem -2.06rem;
       transition: background-position ${systemConfig.sceneShutterDuration}ms ease-in-out;
     }
@@ -28,7 +28,7 @@ export const SceneShutterWrapper = styled.div`
       top: 0;
       right: 0;
       transform: rotateX(180deg);
-      background: url("/image/layouts/loaded/shutter_r.png") no-repeat center/cover;
+      background: url("/image/layouts/shutter/shutter_r.png") no-repeat center/cover;
       transition: background-position-x ${systemConfig.sceneShutterDuration}ms ease-in-out;
       background-position-x: 5rem;
     }

@@ -2,8 +2,6 @@
 export default class ResLoader {
   constructor(config) {
     this.option = {
-      resourceType: 'image',
-      baseUrl: '.',
       resources: [],
       onStart: null,
       onProgress: null,
@@ -28,15 +26,9 @@ export default class ResLoader {
   start() {
     this.status = 1;
     var _this = this;
-    var baseUrl = this.option.baseUrl;
     for (var i = 0, l = this.option.resources.length; i < l; i++) {
       var r = this.option.resources[i], url = '';
-      if (r.indexOf('http://') === 0 || r.indexOf('https://') === 0) {
-        url = r;
-      }
-      else {
-        url = baseUrl + r;
-      }
+      url = r;
 
       var image = new Image();
       image.onload = function () { _this.loaded(); };
@@ -48,8 +40,9 @@ export default class ResLoader {
     }
   }
   loaded() {
+    this.currentIndex++
     if (this.isFunc(this.option.onProgress)) {
-      this.option.onProgress(++this.currentIndex, this.total);
+      this.option.onProgress(this.currentIndex, this.total);
     }
     //加载完毕
     if (this.currentIndex === this.total) {
