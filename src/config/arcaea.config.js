@@ -1,3 +1,3 @@
 export const systemConfig = {
-  appLoadDuration: 1000
+  sceneShutterDuration: 1000
 }

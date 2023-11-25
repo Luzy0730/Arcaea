@@ -3,11 +3,11 @@ import { useRoutes } from 'react-router-dom'
 import { shallowEqual, useSelector } from 'react-redux'
 import { AppWrapper } from './style'
 import routes from './router/index'
-import AppLoad from './components/appLoad'
+import SceneShutter from './components/sceneShutter'
 
 const App = memo(() => {
-  const { isAppLoaded } = useSelector(state => ({
-    isAppLoaded: state.system.isAppLoaded
+  const { sceneShutterState } = useSelector(state => ({
+    sceneShutterState: state.system.sceneShutterState
   }), shallowEqual)
 
   return (
@@ -16,7 +16,7 @@ const App = memo(() => {
         <div className='page'>
           {useRoutes(routes)}
         </div>
-        <AppLoad loaded={isAppLoaded} />
+        <SceneShutter loaded={sceneShutterState} />
       </div>
     </AppWrapper>
   )

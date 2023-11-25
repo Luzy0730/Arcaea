@@ -1,14 +1,14 @@
 import React, { memo, useCallback, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { startAppLoaded } from '@/store/modules/system'
+import { closeSceneShutter } from '@/store/modules/system'
 import { StartupWrapper } from './style'
 
 const index = memo(() => {
   const dispath = useDispatch()
   const navigate = useNavigate()
   const startGame = useCallback(() => {
-    dispath(startAppLoaded(() => {
+    dispath(closeSceneShutter(() => {
       navigate('/home')
     }))
   }, [dispath, navigate])

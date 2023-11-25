@@ -1,8 +1,8 @@
 export const preloadImages = {
   // 公共图片
   Common: [
-    "/image/common/shutter_l.png",
-    "/image/common/shutter_r.png"
+    "/image/layouts/loaded/shutter_l.png",
+    "/image/layouts/loaded/shutter_r.png"
   ],
   // 起始页
   Startup: [
@@ -20,6 +20,11 @@ export const preloadImages = {
     "/image/startup/lowiro_white.png",
     "/image/startup/main_glass.png",
     "/image/startup/lowiro_white.png",
+  ],
+  // 首页
+  Home: [
+    "/image/home/bg_light.jpg",
+    "/image/home/bg_shadow.png",
   ]
 }
 

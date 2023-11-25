@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { systemConfig } from '@/config/arcaea.config';
 
-export const startAppLoaded = createAsyncThunk(
-  'system/startAppLoaded',
+export const closeSceneShutter = createAsyncThunk(
+  'system/closeSceneShutter',
   async (payload, store) => {
-    store.dispatch(setAppLoaded(true))
-    await new Promise(resolve => setTimeout(resolve, systemConfig.appLoadDuration));
+    store.dispatch(setSceneShutterState(true))
+    await new Promise(resolve => setTimeout(resolve, systemConfig.sceneShutterDuration));
     if (typeof payload === 'function') payload()
   }
 );
@@ -13,15 +13,15 @@ export const startAppLoaded = createAsyncThunk(
 const systemSlice = createSlice({
   name: 'system',
   initialState: {
-    isAppLoaded: false
+    sceneShutterState: false
   },
   reducers: {
-    setAppLoaded(state, action) {
-      state.isAppLoaded = action.payload;
+    setSceneShutterState(state, action) {
+      state.sceneShutterState = action.payload;
     },
   },
 })
 
-export const { setAppLoaded } = systemSlice.actions
+export const { setSceneShutterState } = systemSlice.actions
 
 export default systemSlice.reducer
