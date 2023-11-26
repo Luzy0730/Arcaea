@@ -5,13 +5,13 @@ import { closeSceneShutter } from '@/store/modules/system'
 import { StartupWrapper } from './style'
 
 const index = memo(() => {
-  const dispath = useDispatch()
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const startGame = useCallback(() => {
-    dispath(closeSceneShutter(() => {
+    dispatch(closeSceneShutter(() => {
       navigate('/layout/main')
     }))
-  }, [dispath, navigate])
+  }, [dispatch, navigate])
 
   useEffect(() => {
     window.addEventListener('click', startGame)
