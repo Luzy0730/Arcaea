@@ -68,22 +68,26 @@ export const MainWrapper = styled.div`
         background: url("/image/main/mainmenu/main_story_pressed.png") no-repeat center/cover;
       }
     }
-    .world-wp {
+    .world-place {
+      position: absolute;
+      top: 187px;
+      left: 560px;
+      width: 3.02rem;
+      height: 3.02rem;
+      transform: rotate(45deg);
+      z-index: 10;
+      &:active +.world{
+        background: url("/image/main/mainmenu/world_offline_pressed.png") no-repeat center/cover;
+      }
+    }
+    .world {
       position: absolute;
       top: 1.21rem;
       left: 4.88rem;
       width: 4.65rem;
       height: 4.64rem;
       background: url("/image/main/mainmenu/world_offline.png") no-repeat center/cover;
-      .world {
-        position: absolute;
-        top: 67px;
-        left: 73px;
-        width: 65%;
-        height: 65%;
-        transform: rotate(45deg);
-        z-index: 10;
-      }
+
       &::after {
         content: "";
         position: absolute;
@@ -93,9 +97,6 @@ export const MainWrapper = styled.div`
         left: 50%;
         transform: translate(-50%, -50%);
         background: url("/image/main/mainmenu/world_text_offline.png") no-repeat center/cover;
-      }
-      &:active {
-        background: url("/image/main/mainmenu/world_offline_pressed.png") no-repeat center/cover;
       }
     }
     .challenge {
