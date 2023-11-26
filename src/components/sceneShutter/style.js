@@ -7,34 +7,35 @@ export const SceneShutterWrapper = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: ${props => props.zIndex};
   .scene-shutter {
+    position: relative;
     width: 100%;
     height: 100%;
+    overflow: hidden;
     .shutter_l {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: -0.82rem;
+      left: -20rem;
       width: 19.5rem;
-      height: 100%;
+      height: 110%;
       transform: rotateX(180deg);
       background: url("/image/layouts/shutter/shutter_l.png") no-repeat center/cover;
-      background-position: -20rem -2.06rem;
-      transition: background-position ${systemConfig.sceneShutterDuration}ms ease-in-out;
+      transition: left ${systemConfig.sceneShutterDuration}ms ease-in-out;
     }
     .shutter_r {
       height: 100%;
       width: 4.7rem;
       position: absolute;
       top: 0;
-      right: 0;
+      right: -5rem;
       transform: rotateX(180deg);
       background: url("/image/layouts/shutter/shutter_r.png") no-repeat center/cover;
-      transition: background-position-x ${systemConfig.sceneShutterDuration}ms ease-in-out;
-      background-position-x: 5rem;
+      transition: right ${systemConfig.sceneShutterDuration}ms ease-in-out;
     }
     &.loading {
-      .shutter_l { background-position: -0.93rem -2.06rem; }
-      .shutter_r { background-position-x: 0rem;}
+      .shutter_l { left: -0.93rem; }
+      .shutter_r { right: 0rem;}
     }
   }
 `

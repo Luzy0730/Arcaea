@@ -9,7 +9,7 @@ const index = memo(() => {
   const navigate = useNavigate()
   const startGame = useCallback(() => {
     dispath(closeSceneShutter(() => {
-      navigate('/home')
+      navigate('/layout/main')
     }))
   }, [dispath, navigate])
 

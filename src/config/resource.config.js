@@ -1,8 +1,16 @@
 export const preloadImages = {
   // 公共图片
   Common: [
-    "/image/layouts/loaded/shutter_l.png",
-    "/image/layouts/loaded/shutter_r.png"
+    "/image/layouts/shutter/shutter_l.png",
+    "/image/layouts/shutter/shutter_r.png",
+    "image/layouts/topbar/top_bar_bg.png",
+    "/image/layouts/topbar/status_bg.png",
+    "/image/layouts/topbar/settings.png",
+  ],
+  // 人物
+  Char: [
+    "/image/char/0_icon.png",
+    "/image/char/1080/0.png"
   ],
   // 起始页
   Startup: [
@@ -21,10 +29,24 @@ export const preloadImages = {
     "/image/startup/main_glass.png",
     "/image/startup/lowiro_white.png",
   ],
-  // 首页
-  Home: [
-    "/image/home/bg_light.jpg",
-    "/image/home/bg_shadow.png",
+  // 主页
+  Main: [
+    "/image/main/bg_light.jpg",
+    "/image/main/bg_shadow.png",
+    "/image/main/mainmenu/main_musicplay.png",
+    "/image/main/mainmenu/main_musicplay_pressed.png",
+    "/image/main/mainmenu/new_badge.png",
+    "/image/main/mainmenu/main_story.png",
+    "/image/main/mainmenu/main_story_pressed.png",
+    "/image/main/mainmenu/world_offline.png",
+    "/image/main/mainmenu/world_text_offline.png",
+    "/image/main/mainmenu/world_offline_pressed.png",
+    "/image/main/mainmenu/main_course_disabled.png",
+    "/image/main/mainmenu/main_course_disabled_pressed.png",
+    "/image/main/mainmenu/main_network.png",
+    "/image/main/mainmenu/main_network_pressed.png",
+    "/image/main/mainmenu/main_more.png",
+    "/image/main/mainmenu/main_more_pressed.png"
   ]
 }
 

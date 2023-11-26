@@ -2,12 +2,14 @@ import styled from "styled-components";
 import { systemConfig } from '@/config/arcaea.config';
 
 export const ResourceLoadedWrapper = styled.div`
+  z-index: 10000;
   position: fixed;
   right: 0;
   bottom: 0;
   overflow: hidden;
   transform: scale(0.6);
   filter: invert(1);
+  z-index: ${props => props.zIndex};
   .resourece-loaded {
     display: flex;
     align-items: center;

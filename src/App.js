@@ -7,19 +7,21 @@ import SceneShutter from './components/sceneShutter'
 import ResourceLoaded from './components/resourceLoaded'
 
 const App = memo(() => {
-  const { sceneShutterState, resourceLoadedState } = useSelector(state => ({
+  const { sceneShutterState, sceneShutterZIndex, resourceLoadedState, resourceLoadedZIndex } = useSelector(state => ({
     sceneShutterState: state.system.sceneShutterState,
-    resourceLoadedState: state.system.resourceLoadedState
+    sceneShutterZIndex: state.system.sceneShutterZIndex,
+    resourceLoadedState: state.system.resourceLoadedState,
+    resourceLoadedZIndex: state.system.resourceLoadedZIndex
   }), shallowEqual)
 
   return (
     <AppWrapper>
       <div className='app'>
+        <SceneShutter loaded={sceneShutterState} zIndex={sceneShutterZIndex} />
+        <ResourceLoaded loaded={resourceLoadedState} zIndex={resourceLoadedZIndex} />
         <div className='page'>
           {useRoutes(routes)}
         </div>
-        <SceneShutter loaded={sceneShutterState} />
-        <ResourceLoaded loaded={resourceLoadedState} />
       </div>
     </AppWrapper>
   )

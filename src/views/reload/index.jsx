@@ -14,7 +14,11 @@ const Reload = memo(() => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(preloadResource([
-      [...preloadImages.Common, ...preloadImages.Startup],
+      [
+        ...preloadImages.Common,
+        ...preloadImages.Char,
+        ...preloadImages.Startup
+      ],
       function (total) {
         console.log('加载完毕:' + total + '个资源');
         navigate('/start')

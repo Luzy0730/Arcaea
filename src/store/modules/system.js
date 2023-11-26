@@ -3,12 +3,43 @@ import { systemConfig } from '@/config/arcaea.config';
 import ResLoader from '@/utils/ResLoader'
 
 /**
+ * 调整场景窗帘层级 boolean
+ */
+export const changeSceneShutterZIndex = createAsyncThunk(
+  'system/setSceneShutterZIndex',
+  async (sceneShutterState, store) => {
+    if (sceneShutterState) {
+      store.dispatch(setSceneShutterZIndex(1000))
+    } else {
+      await new Promise(resolve => setTimeout(resolve, systemConfig.sceneShutterDuration));
+      store.dispatch(setSceneShutterZIndex(0))
+    }
+  }
+)
+
+/**
+ * 调整资源加载状态层级 boolean
+ */
+export const changeResourceLoadedZIndex = createAsyncThunk(
+  'system/changeResourceLoadedZIndex',
+  async (resourceLoadedState, store) => {
+    if (resourceLoadedState) {
+      store.dispatch(setResourceLoadedZIndex(1000))
+    } else {
+      await new Promise(resolve => setTimeout(resolve, systemConfig.resourceLoadedDuration));
+      store.dispatch(setResourceLoadedZIndex(0))
+    }
+  }
+)
+
+/**
  * 关闭场景窗帘
  * cb   => 场景窗帘关闭后的回调
  */
 export const closeSceneShutter = createAsyncThunk(
   'system/closeSceneShutter',
   async (cb, store) => {
+    store.dispatch(changeSceneShutterZIndex(true))
     store.dispatch(setSceneShutterState(true))
     await new Promise(resolve => setTimeout(resolve, systemConfig.sceneShutterDuration));
     if (typeof cb === 'function') cb()
@@ -24,6 +55,7 @@ export const changeResourceLoaded = createAsyncThunk(
   'system/changeResourceLoaded',
   async ([state, cb], store) => {
     store.dispatch(setResourceLoadedState(state))
+    store.dispatch(changeResourceLoadedZIndex(state))
     await new Promise(resolve => setTimeout(resolve, systemConfig.resourceLoadedDuration));
     if (typeof cb === 'function') cb()
   }
@@ -72,7 +104,9 @@ export const preloadResource = createAsyncThunk(
 const systemSlice = createSlice({
   name: 'system',
   initialState: {
+    sceneShutterZIndex: 0,
     sceneShutterState: false,
+    resourceLoadedZIndex: 0,
     resourceLoadedState: false
   },
   reducers: {
@@ -82,9 +116,15 @@ const systemSlice = createSlice({
     setResourceLoadedState(state, action) {
       state.resourceLoadedState = action.payload;
     },
+    setSceneShutterZIndex(state, action) {
+      state.sceneShutterZIndex = action.payload;
+    },
+    setResourceLoadedZIndex(state, action) {
+      state.resourceLoadedZIndex = action.payload;
+    },
   },
 })
 
-export const { setSceneShutterState, setResourceLoadedState } = systemSlice.actions
+export const { setSceneShutterState, setResourceLoadedState, setSceneShutterZIndex, setResourceLoadedZIndex } = systemSlice.actions
 
 export default systemSlice.reducer
