@@ -1,9 +1,10 @@
 export const preloadImages = {
   // 公共图片
   Common: [
+    "/image/layouts/loaded/activity_icon.png",
     "/image/layouts/shutter/shutter_l.png",
     "/image/layouts/shutter/shutter_r.png",
-    "image/layouts/topbar/top_bar_bg.png",
+    "/image/layouts/topbar/top_bar_bg.png",
     "/image/layouts/topbar/status_bg.png",
     "/image/layouts/topbar/settings.png",
   ],
