@@ -4,6 +4,7 @@ import Reload from '@/views/reload/index.jsx'
 import Startup from '@/views/startup/index.jsx'
 const Layout = React.lazy(() => import('@/views/layout/index.jsx'))
 const Main = React.lazy(() => import('@/views/main/index.jsx'))
+const Songs = React.lazy(() => import('@/views/songs/index.jsx'))
 const routes = [
   {
     path: '/',
@@ -20,12 +21,16 @@ const routes = [
       {
         path: 'main',
         element: <Main />
+      },
+      {
+        path: 'songs',
+        element: <Songs />
       }
     ]
   },
   {
     path: '/*',
-    element: <Navigate to='/layout/main' />
+    element: <Navigate to='/' />
   }
 ]
 

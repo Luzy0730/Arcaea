@@ -48,6 +48,12 @@ export const preloadImages = {
     "/image/main/mainmenu/main_network_pressed.png",
     "/image/main/mainmenu/main_more.png",
     "/image/main/mainmenu/main_more_pressed.png"
+  ],
+  // 歌单页
+  Songs: [
+    "/image/songs/bg_select_dark.png",
+    "/image/songs/back.png",
+    "/image/songs/back_pressed.png"
   ]
 }
 
