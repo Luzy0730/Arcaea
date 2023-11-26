@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { changeSceneAction, preloadResource, setSceneShutterState, changeSceneShutterZIndex } from '@/store/modules/system'
 
@@ -14,7 +14,7 @@ function usePreload([resources, asyncCb]) {
   const [resComplete, setResComplete] = useState(false)
   const [aycComplete, setAycComplete] = useState(false)
 
-  return () => dispath(changeSceneAction([
+  return useCallback(() => dispath(changeSceneAction([
     (loadedCloseFn) => {
       if (typeof asyncCb === 'function') {
         asyncCb().then(() => {
@@ -40,7 +40,7 @@ function usePreload([resources, asyncCb]) {
       dispath(setSceneShutterState(false))
       dispath(changeSceneShutterZIndex(false))
     }
-  ]))
+  ])), [asyncCb, aycComplete, dispath, resComplete, resources])
 }
 
 export default usePreload;
