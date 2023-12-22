@@ -1,26 +1,18 @@
-import React, { memo, useCallback, useEffect } from 'react'
-import { preloadImages } from '@/config/resource.config'
+import React, { memo, useCallback } from 'react'
 import { MainWrapper } from './style'
-import usePreload from '@/hooks/usePreload'
 import { useDispatch } from 'react-redux'
 import { closeSceneShutter } from '@/store/modules/system'
 import { useNavigate } from 'react-router-dom'
 
 const Main = memo(() => {
-  const preload = usePreload([preloadImages.Main])
   const navigate = useNavigate()
   const dispatch = useDispatch()
-
-  useEffect(() => {
-    preload()
-  }, [preload])
 
   const handleStart = useCallback(() => {
     dispatch(closeSceneShutter(() => {
       navigate('/layout/songs')
     }))
   }, [dispatch, navigate])
-
   return (
     <MainWrapper>
       <div className='main'></div>

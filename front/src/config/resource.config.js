@@ -31,7 +31,7 @@ export const preloadImages = {
     "/image/startup/lowiro_white.png",
   ],
   // 主页
-  Main: [
+  "/layout/main": [
     "/image/main/bg_light.jpg",
     "/image/main/bg_shadow.png",
     "/image/main/mainmenu/main_musicplay.png",
@@ -50,10 +50,20 @@ export const preloadImages = {
     "/image/main/mainmenu/main_more_pressed.png"
   ],
   // 歌单页
-  Songs: [
+  '/layout/songs': [
     "/image/songs/bg_select_dark.png",
     "/image/songs/back.png",
-    "/image/songs/back_pressed.png"
+    "/image/songs/back_pressed.png",
+    "/image/songs/divider_free.png",
+    "/image/songs/1080_select_base.png",
+    "/image/songs/1080_select_extend_2.png"
+  ],
+  // 游玩界面
+  "play": [
+    "/image/play/base_light.jpg",
+    "/image/play/track.png",
+    "/image/play/track_lane_divider.png",
+    "/image/play/note.png"
   ]
 }
 

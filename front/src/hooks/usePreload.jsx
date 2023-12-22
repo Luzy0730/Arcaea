@@ -8,13 +8,12 @@ import { changeSceneAction, preloadResource, setSceneShutterState, changeSceneSh
  * @param {异步操作} asyncCb 
  * @returns 
  */
-function usePreload([resources, asyncCb]) {
+function usePreload() {
   const dispath = useDispatch()
-
   const [resComplete, setResComplete] = useState(false)
   const [aycComplete, setAycComplete] = useState(false)
 
-  return useCallback(() => dispath(changeSceneAction([
+  return useCallback(([resources, asyncCb]) => dispath(changeSceneAction([
     (loadedCloseFn) => {
       if (typeof asyncCb === 'function') {
         asyncCb().then(() => {
@@ -40,7 +39,7 @@ function usePreload([resources, asyncCb]) {
       dispath(setSceneShutterState(false))
       dispath(changeSceneShutterZIndex(false))
     }
-  ])), [asyncCb, aycComplete, dispath, resComplete, resources])
+  ])), [aycComplete, dispath, resComplete,])
 }
 
 export default usePreload;
