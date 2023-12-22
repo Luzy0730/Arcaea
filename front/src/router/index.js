@@ -2,9 +2,10 @@ import React from "react"
 import { Navigate } from 'react-router-dom'
 import Reload from '@/views/reload/index.jsx'
 import Startup from '@/views/startup/index.jsx'
-const Layout = React.lazy(() => import('@/views/layout/index.jsx'))
-const Main = React.lazy(() => import('@/views/main/index.jsx'))
-const Songs = React.lazy(() => import('@/views/songs/index.jsx'))
+import Layout from '@/views/layout/index.jsx'
+import Main from '@/views/main/index.jsx'
+import Songs from '@/views/songs/index.jsx'
+import Play from '@/views/play/index.jsx'
 const routes = [
   {
     path: '/',
@@ -27,6 +28,10 @@ const routes = [
         element: <Songs />
       }
     ]
+  },
+  {
+    path: '/play',
+    element: <Play />
   },
   {
     path: '/*',

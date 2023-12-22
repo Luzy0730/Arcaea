@@ -9,6 +9,46 @@ export const SongsWrapper = styled.div`
     width: 100%;
     height: 100%;
     background: url("/image/songs/bg_select_dark.png") no-repeat center/cover;
+    .albums {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      transition: all ease-in-out .3s;
+      .free {
+        display: flex;
+        align-items: center;
+        margin-right: -20px;
+        &::before {
+          content: "";
+          display: block;
+          width: 71px;
+          height: 369px;
+          background: url("/image/songs/divider_free.png") no-repeat center/cover;
+        }
+        .free-item {
+          position: relative;
+          margin: 0 20px;
+          width: 401px;
+          height: 717px;
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+          }
+          &:active {
+            filter: drop-shadow(0 0 20px #fff);
+          }
+        }
+      }
+      &.hide {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0;
+      }
+    }
     .back {
       opacity: 0.8;
       position: absolute;
@@ -27,7 +67,7 @@ export const SongsWrapper = styled.div`
         font-weight: bold;
       }
       &:active {
-      background: url("/image/songs/back_pressed.png") no-repeat center/cover;
+        background: url("/image/songs/back_pressed.png") no-repeat center/cover;
       }
     }
   }
