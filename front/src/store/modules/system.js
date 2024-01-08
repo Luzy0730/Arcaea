@@ -107,7 +107,8 @@ const systemSlice = createSlice({
     sceneShutterZIndex: 0,
     sceneShutterState: false,
     resourceLoadedZIndex: 0,
-    resourceLoadedState: false
+    resourceLoadedState: false,
+    effectSwitch: false
   },
   reducers: {
     setSceneShutterState(state, action) {
@@ -122,9 +123,12 @@ const systemSlice = createSlice({
     setResourceLoadedZIndex(state, action) {
       state.resourceLoadedZIndex = action.payload;
     },
+    setEffectSwitch(state, action) {
+      state.effectSwitch = action.payload;
+    },
   },
 })
 
-export const { setSceneShutterState, setResourceLoadedState, setSceneShutterZIndex, setResourceLoadedZIndex } = systemSlice.actions
+export const { setSceneShutterState, setResourceLoadedState, setSceneShutterZIndex, setResourceLoadedZIndex, setEffectSwitch } = systemSlice.actions
 
 export default systemSlice.reducer

@@ -59,11 +59,20 @@ export const preloadImages = {
     "/image/songs/1080_select_extend_2.png"
   ],
   // 游玩界面
-  "play": [
+  "/play": [
     "/image/play/base_light.jpg",
     "/image/play/track.png",
     "/image/play/track_lane_divider.png",
-    "/image/play/note.png"
+    "/image/play/note.png",
+    "/image/play/note_colorless.png",
+    "/image/play/hit_far.png",
+    "/image/play/hit_lost.png",
+    "/image/play/hit_pure.png",
+    "/image/play/uileft.png",
+    "/image/play/uileft_pressed.png",
+    "/image/play/uiright.png",
+    "/image/play/1080_base_256.png",
+    "/image/play/hp_bar_course_grid.png",
   ]
 }
 

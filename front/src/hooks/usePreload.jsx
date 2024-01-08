@@ -13,7 +13,7 @@ function usePreload() {
   const [resComplete, setResComplete] = useState(false)
   const [aycComplete, setAycComplete] = useState(false)
 
-  return useCallback(([resources, asyncCb]) => dispath(changeSceneAction([
+  return useCallback(([resources, asyncCb], resolveFn) => dispath(changeSceneAction([
     (loadedCloseFn) => {
       if (typeof asyncCb === 'function') {
         asyncCb().then(() => {
@@ -35,11 +35,11 @@ function usePreload() {
       }
       if (!resources && (typeof asyncCb !== 'function')) loadedCloseFn()
     },
-    () => {
+    async () => {
       dispath(setSceneShutterState(false))
       dispath(changeSceneShutterZIndex(false))
-    }
-  ])), [aycComplete, dispath, resComplete,])
+      if (typeof resolveFn === 'function') await resolveFn()
+    }])), [aycComplete, dispath, resComplete,])
 }
 
 export default usePreload;
