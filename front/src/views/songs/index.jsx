@@ -2,7 +2,7 @@ import React, { memo, useCallback, useState } from 'react'
 import classnames from 'classnames'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { closeSceneShutter } from '@/store/modules/system'
+import { closeSceneShutter, setEffectSwitch } from '@/store/modules/system'
 import { SongsWrapper } from './style'
 
 const Songs = memo(() => {
@@ -14,6 +14,7 @@ const Songs = memo(() => {
   const handleAlbumClick = useCallback((album) => {
     setAlbumDET(true)
     dispatch(closeSceneShutter(() => {
+      dispatch(setEffectSwitch(false))
       navigate('/play')
     }))
   }, [dispatch, navigate])
