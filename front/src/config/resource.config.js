@@ -68,5 +68,15 @@ export const preloadImages = {
 }
 
 export const preloadStore = {
-  images: preloadImages
+  images: process.env.REACT_APP_ENV === 'production'
+    ? Object.keys(preloadImages).reduce((acc, key) => {
+      const updatedImages = preloadImages[key].map(image => {
+        let updatedImage = image.replace('/image', '/image-min');
+        updatedImage = updatedImage.replace(/.png|.jpg/g, '.webp');
+        return updatedImage;
+      });
+      acc[key] = updatedImages;
+      return acc;
+    }, {})
+    : preloadImages
 }
