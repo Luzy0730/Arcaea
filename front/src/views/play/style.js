@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { systemConfig } from '@/config/arcaea.config';
+import { preloadStore } from '@/config/resource.config'
+const { Play } = preloadStore.images
 
 export const PlayWrapper = styled.div`
   width: 100%;
@@ -7,7 +9,7 @@ export const PlayWrapper = styled.div`
   .play {
     width: 100%;
     height: 100%;
-    background: url("/image/play/base_light.jpg") no-repeat center/cover;
+    background: url(${Play[0]}) no-repeat center/cover;
     .uileft {
       position: absolute;
       left: 0;
@@ -16,10 +18,10 @@ export const PlayWrapper = styled.div`
       height: 99px;
       transform: scale(0.95);
       transform-origin: left;
-      background: url("/image/play/uileft.png") no-repeat center/cover;
+      background: url(${Play[8]}) no-repeat center/cover;
       cursor: pointer;
       &:active {
-        background: url("/image/play/uileft_pressed.png") no-repeat center/cover;
+        background: url(${Play[9]}) no-repeat center/cover;
       }
     }
     .uiright {
@@ -30,7 +32,7 @@ export const PlayWrapper = styled.div`
       height: 314px;
       transform: scale(0.95);
       transform-origin: right;
-      background: url("/image/play/uiright.png") no-repeat center/cover;
+      background: url(${Play[10]}) no-repeat center/cover;
       font-family: 'Exo-Light';
       color: #fff;
       text-shadow: 3px 3px #000000d1;
@@ -56,7 +58,7 @@ export const PlayWrapper = styled.div`
       left: 30px;
       width: 39px;
       height: 487px;
-      background: url("/image/play/hp_bar_course_grid.png") no-repeat center/cover;
+      background: url(${Play[12]}) no-repeat center/cover;
       background-color: #fff;
     }
     .track-wp{
@@ -71,7 +73,7 @@ export const PlayWrapper = styled.div`
         left: 0;
         width: 100%;
         height: 404%;
-        background: url(/image/play/track.png) no-repeat center;
+        background: url(${Play[1]}) no-repeat center;
         background-repeat: repeat-y;
         transform: rotateX(60deg) scale(6);
         transform-origin: 50% 100%;
@@ -110,7 +112,7 @@ export const PlayWrapper = styled.div`
             right: 0;
             width: 0.06rem;
             height: 100%;
-            background: url("/image/play/track_lane_divider.png") no-repeat center/cover;
+            background: url(${Play[2]}) no-repeat center/cover;
           }
           .note-judge {
             position: absolute;
@@ -137,7 +139,7 @@ export const PlayWrapper = styled.div`
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background: url("/image/play/note_colorless.png") no-repeat ;
+                background: url(${Play[4]}) no-repeat ;
                 animation: note-hited ${systemConfig.playHitDuration}ms steps(16) both;
               }
             }
@@ -151,13 +153,13 @@ export const PlayWrapper = styled.div`
               height: 108px;
               animation: hw-1 ${systemConfig.playHitDuration}ms forwards;
               &.hw-1 {
-                background: url("/image/play/hit_pure.png") no-repeat ;
+                background: url(${Play[7]}) no-repeat ;
               }
               &.hw-2 {
-                background: url("/image/play/hit_far.png") no-repeat ;
+                background: url(${Play[5]}) no-repeat ;
               }
               &.hw-3 {
-                background: url("/image/play/hit_lost.png") no-repeat ;
+                background: url(${Play[6]}) no-repeat ;
               }
             }
           }
@@ -168,7 +170,7 @@ export const PlayWrapper = styled.div`
             left: 5%;
             width: 90%;
             height: 0.64rem;
-            background: url("/image/play/note.png") no-repeat center/cover;
+            background: url(${Play[3]}) no-repeat center/cover;
             animation: note ${systemConfig.playSpeed}ms forwards;
             &.hited {
               display: none;

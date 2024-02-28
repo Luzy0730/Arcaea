@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { preloadStore } from '@/config/resource.config'
+const { Common, Char } = preloadStore.images
 
 export const LayoutWrapper = styled.div`
   width: 100%;
@@ -13,7 +15,7 @@ export const LayoutWrapper = styled.div`
       left: 0;
       width: 19.2rem;
       height: 1.046rem;
-      background: url("/image/layouts/topbar/top_bar_bg.png") no-repeat center/cover;
+      background: url(${Common[3]}) no-repeat center/cover;
       font-size: 36px;
       font-weight: bold;
       .topbar-content {
@@ -39,7 +41,7 @@ export const LayoutWrapper = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        background: url("/image/layouts/topbar/status_bg.png") no-repeat center/cover;
+        background: url(${Common[4]}) no-repeat center/cover;
         & >div {
           transform: translateY(-4px);
         }
@@ -51,7 +53,7 @@ export const LayoutWrapper = styled.div`
       top: -23%;
       width: 1.4rem;
       height: 1.4rem;
-      background: url("/image/char/0_icon.png") no-repeat center/cover;
+      background: url(${Char[0]}) no-repeat center/cover;
     }
     .config {
       position: absolute;
@@ -68,7 +70,7 @@ export const LayoutWrapper = styled.div`
         opacity: 0.5;
         width: 0.5rem;
         height: 0.5rem;
-        background: url("/image/layouts/topbar/settings.png") no-repeat center/cover;
+        background: url(${Common[5]}) no-repeat center/cover;
       }
     }
   }

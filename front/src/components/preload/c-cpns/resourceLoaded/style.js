@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { systemConfig } from '@/config/arcaea.config';
+import { preloadStore } from '@/config/resource.config'
+const { Common } = preloadStore.images
 
 export const ResourceLoadedWrapper = styled.div`
   z-index: 10000;
@@ -27,7 +29,7 @@ export const ResourceLoadedWrapper = styled.div`
       opacity: 0;
       width: 0.97rem;
       height: 1.46rem;
-      background: url("/image/layouts/loaded/activity_icon.png") no-repeat center/cover;
+      background: url(${Common[0]}) no-repeat center/cover;
       animation: ic_ld 700ms infinite;
       transition: opacity ${systemConfig.resourceLoadedDuration}ms 200ms;
     }

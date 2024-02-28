@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { preloadImages } from '@/config/resource.config'
+import { preloadStore } from '@/config/resource.config'
 import { preloadResource } from '@/store/modules/system'
 
 const Reload = memo(() => {
@@ -15,9 +15,9 @@ const Reload = memo(() => {
   useEffect(() => {
     dispatch(preloadResource([
       [
-        ...preloadImages.Common,
-        ...preloadImages.Char,
-        ...preloadImages.Startup
+        ...preloadStore.images.Common,
+        ...preloadStore.images.Char,
+        ...preloadStore.images.Startup
       ],
       function (total) {
         console.log('加载完毕:' + total + '个资源');

@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { closeSceneShutter, setEffectSwitch } from '@/store/modules/system'
 import { SongsWrapper } from './style'
+import { preloadStore } from '@/config/resource.config'
+const { LayoutSongs } = preloadStore.images
 
 const Songs = memo(() => {
   const dispatch = useDispatch()
@@ -21,8 +23,8 @@ const Songs = memo(() => {
 
   // 免费歌曲
   const [freeList] = useState([
-    "/image/songs/1080_select_base.png",
-    "/image/songs/1080_select_extend_2.png",
+    LayoutSongs[4],
+    LayoutSongs[5],
   ])
   const renderFreeList = useCallback(() => {
     return freeList.map((item, index) => {

@@ -27,11 +27,10 @@ export const preloadImages = {
     "/image/startup/1080/char_h.png",
     "/image/startup/copyright.png",
     "/image/startup/lowiro_white.png",
-    "/image/startup/main_glass.png",
-    "/image/startup/lowiro_white.png",
+    "/image/startup/main_glass.png"
   ],
   // 主页
-  "/layout/main": [
+  LayoutMain: [
     "/image/main/bg_light.jpg",
     "/image/main/bg_shadow.png",
     "/image/main/mainmenu/main_musicplay.png",
@@ -50,7 +49,7 @@ export const preloadImages = {
     "/image/main/mainmenu/main_more_pressed.png"
   ],
   // 歌单页
-  '/layout/songs': [
+  LayoutSongs: [
     "/image/songs/bg_select_dark.png",
     "/image/songs/back.png",
     "/image/songs/back_pressed.png",
@@ -59,7 +58,7 @@ export const preloadImages = {
     "/image/songs/1080_select_extend_2.png"
   ],
   // 游玩界面
-  "/play": [
+  Play: [
     "/image/play/base_light.jpg",
     "/image/play/track.png",
     "/image/play/track_lane_divider.png",
@@ -71,21 +70,21 @@ export const preloadImages = {
     "/image/play/uileft.png",
     "/image/play/uileft_pressed.png",
     "/image/play/uiright.png",
-    "/image/play/1080_base_256.png",
     "/image/play/hp_bar_course_grid.png",
   ]
 }
 
+
 export const preloadStore = {
   images: process.env.REACT_APP_ENV === 'production'
-    ? Object.keys(preloadImages).reduce((acc, key) => {
-      const updatedImages = preloadImages[key].map(image => {
-        let updatedImage = image.replace('/image', '/image-min');
-        updatedImage = updatedImage.replace(/.png|.jpg/g, '.webp');
-        return updatedImage;
-      });
-      acc[key] = updatedImages;
-      return acc;
-    }, {})
-    : preloadImages
+  ? Object.keys(preloadImages).reduce((acc, key) => {
+    const updatedImages = preloadImages[key].map(image => {
+      let updatedImage = image.replace('/image', '/image-min');
+      updatedImage = updatedImage.replace(/.png|.jpg/g, '.webp');
+      return updatedImage;
+    });
+    acc[key] = updatedImages;
+    return acc;
+  }, {})
+  : preloadImages
 }

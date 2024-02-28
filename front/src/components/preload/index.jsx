@@ -5,13 +5,21 @@ import { setEffectSwitch } from '@/store/modules/system'
 import SceneShutter from './c-cpns/sceneShutter'
 import ResourceLoaded from './c-cpns/resourceLoaded'
 import usePreload from '@/hooks/usePreload'
-import { preloadImages } from '@/config/resource.config'
+import { preloadStore } from '@/config/resource.config'
 
 const Preload = memo(() => {
   const dispatch = useDispatch()
   const location = useLocation()
   const preload = usePreload()
-
+  const convertToCamelCase = (str) => {
+    return str.split('/').map((word, index) => {
+      if (index === 0) {
+        return word;
+      } else {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      }
+    }).join('');
+  }
   useEffect(() => {
     const { pathname } = location
     switch (pathname) {
@@ -19,7 +27,7 @@ const Preload = memo(() => {
       case '/start':
         break;
       default:
-        preload([preloadImages[pathname]], () => {
+        preload([preloadStore.images[convertToCamelCase(pathname)]], () => {
           dispatch(setEffectSwitch(true))
         })
     }

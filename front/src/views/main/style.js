@@ -1,4 +1,8 @@
 import styled from "styled-components";
+import { preloadStore } from '@/config/resource.config'
+const { Char, LayoutMain } = preloadStore.images
+
+console.log(preloadStore.images)
 
 export const MainWrapper = styled.div`
   position: relative;
@@ -8,7 +12,7 @@ export const MainWrapper = styled.div`
   .main {
     width: 100%;
     height: 100%;
-    background: url("/image/main/bg_light.jpg") no-repeat center/cover;
+    background: url(${LayoutMain[0]}) no-repeat center/cover;
   }
   .portrait {
     position: absolute;
@@ -16,7 +20,7 @@ export const MainWrapper = styled.div`
     right: -6.44rem;
     width: 18rem;
     height: 18rem;
-    background: url("/image/char/1080/0.png") no-repeat center/cover;
+    background: url(${Char[1]}) no-repeat center/cover;
     animation: portrait 10s infinite;
   }
   .main-shadow {
@@ -25,7 +29,7 @@ export const MainWrapper = styled.div`
     right: 0;
     width: 9.45rem;
     height: 100%;
-    background: url("/image/main/bg_shadow.png") no-repeat center/cover;
+    background: url(${LayoutMain[1]}) no-repeat center/cover;
   }
   .main-menu {
     position: absolute;
@@ -43,7 +47,7 @@ export const MainWrapper = styled.div`
       left: 0.88rem;
       width: 6.29rem;
       height: 1.75rem;
-      background: url("/image/main/mainmenu/main_musicplay.png") no-repeat center/cover;
+      background: url(${LayoutMain[2]}) no-repeat center/cover;
       &.new::before {
         content: "";
         position: absolute;
@@ -51,10 +55,10 @@ export const MainWrapper = styled.div`
         left: -18px;
         width: 1.2rem;
         height: 1.2rem;
-        background: url("/image/main/mainmenu/new_badge.png") no-repeat center/cover;
+        background: url(${LayoutMain[4]}) no-repeat center/cover;
       }
       &:active {
-        background: url("/image/main/mainmenu/main_musicplay_pressed.png") no-repeat center/cover;
+        background: url(${LayoutMain[3]}) no-repeat center/cover;
       }
     }
     .story-mode {
@@ -63,9 +67,9 @@ export const MainWrapper = styled.div`
       left: 0.05rem;
       width: 6.35rem;
       height: 1.75rem;
-      background: url("/image/main/mainmenu/main_story.png") no-repeat center/cover;
+      background: url(${LayoutMain[5]}) no-repeat center/cover;
       &:active {
-        background: url("/image/main/mainmenu/main_story_pressed.png") no-repeat center/cover;
+        background: url(${LayoutMain[6]}) no-repeat center/cover;
       }
     }
     .world-place {
@@ -77,7 +81,7 @@ export const MainWrapper = styled.div`
       transform: rotate(45deg);
       z-index: 10;
       &:active +.world{
-        background: url("/image/main/mainmenu/world_offline_pressed.png") no-repeat center/cover;
+        background: url(${LayoutMain[9]}) no-repeat center/cover;
       }
     }
     .world {
@@ -86,7 +90,7 @@ export const MainWrapper = styled.div`
       left: 4.88rem;
       width: 4.65rem;
       height: 4.64rem;
-      background: url("/image/main/mainmenu/world_offline.png") no-repeat center/cover;
+      background: url(${LayoutMain[7]}) no-repeat center/cover;
 
       &::after {
         content: "";
@@ -96,7 +100,7 @@ export const MainWrapper = styled.div`
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background: url("/image/main/mainmenu/world_text_offline.png") no-repeat center/cover;
+        background: url(${LayoutMain[8]}) no-repeat center/cover;
       }
     }
     .challenge {
@@ -105,9 +109,9 @@ export const MainWrapper = styled.div`
       left: -0.95rem;
       width: 7.26rem;
       height: 1.75rem;
-      background: url("/image/main/mainmenu/main_course_disabled.png") no-repeat center/cover;
+      background: url(${LayoutMain[10]}) no-repeat center/cover;
       &:active {
-        background: url("/image/main/mainmenu/main_course_disabled_pressed.png") no-repeat center/cover;
+        background: url(${LayoutMain[11]}) no-repeat center/cover;
       }
     }
     .online {
@@ -116,9 +120,9 @@ export const MainWrapper = styled.div`
       left: -0.21rem;
       width: 3.81rem;
       height: 1.74rem;
-      background: url("/image/main/mainmenu/main_network.png") no-repeat center/cover;
+      background: url(${LayoutMain[12]}) no-repeat center/cover;
       &:active {
-        background: url("/image/main/mainmenu/main_network_pressed.png") no-repeat center/cover;
+        background: url(${LayoutMain[13]}) no-repeat center/cover;
       }
     }
     .other {
@@ -127,9 +131,9 @@ export const MainWrapper = styled.div`
       left: 3.05rem;
       width: 4.06rem;
       height: 1.74rem;
-      background: url("/image/main/mainmenu/main_more.png") no-repeat center/cover;
+      background: url(${LayoutMain[14]}) no-repeat center/cover;
       &:active {
-        background: url("/image/main/mainmenu/main_more_pressed.png") no-repeat center/cover;
+        background: url(${LayoutMain[15]}) no-repeat center/cover;
       }
     }
   }

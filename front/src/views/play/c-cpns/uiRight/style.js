@@ -1,4 +1,6 @@
-const { default: styled } = require("styled-components")
+import { preloadStore } from '@/config/resource.config'
+import styled from "styled-components";
+const { Play } = preloadStore.images
 
 export const UiRightWrapper = styled.div`
   .uiright {
@@ -9,7 +11,7 @@ export const UiRightWrapper = styled.div`
     height: 314px;
     transform: scale(0.95);
     transform-origin: right;
-    background: url("/image/play/uiright.png") no-repeat center/cover;
+    background: url(${Play[10]}) no-repeat center/cover;
     font-family: 'Exo-Light';
     color: #fff;
     text-shadow: 3px 3px #000000d1;
