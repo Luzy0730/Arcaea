@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom'
 import { closeSceneShutter, setEffectSwitch } from '@/store/modules/system'
 import { SongsWrapper } from './style'
 import { preloadStore } from '@/config/resource.config'
-const { LayoutSongs } = preloadStore.images
+const { Songs } = preloadStore.images
 
-const Songs = memo(() => {
+const Song = memo(() => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -23,8 +23,8 @@ const Songs = memo(() => {
 
   // 免费歌曲
   const [freeList] = useState([
-    LayoutSongs[4],
-    LayoutSongs[5],
+    Songs[4],
+    Songs[5],
   ])
   const renderFreeList = useCallback(() => {
     return freeList.map((item, index) => {
@@ -36,7 +36,7 @@ const Songs = memo(() => {
   // 返回主菜单
   const handleBack = useCallback(() => {
     dispatch(closeSceneShutter(() => {
-      navigate('/layout/main')
+      navigate('/main')
     }))
   }, [dispatch, navigate])
 
@@ -52,4 +52,4 @@ const Songs = memo(() => {
   )
 })
 
-export default Songs
+export default Song

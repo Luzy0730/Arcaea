@@ -1,7 +1,6 @@
 import React, { memo } from 'react'
-import { useRoutes } from 'react-router-dom'
 import { AppWrapper } from './style'
-import routes from './router/index'
+import Layout from './layout'
 import Preload from './components/preload'
 
 const App = memo(() => {
@@ -10,7 +9,7 @@ const App = memo(() => {
       <div className='app'>
         <Preload />
         <div className='page'>
-          {useRoutes(routes)}
+          <Layout />
         </div>
       </div>
     </AppWrapper>

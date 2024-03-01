@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { preloadStore } from '@/config/resource.config'
-const { LayoutSongs } = preloadStore.images
+const { Songs } = preloadStore.images
 
 export const SongsWrapper = styled.div`
   position: relative;
@@ -10,7 +10,7 @@ export const SongsWrapper = styled.div`
   .songs {
     width: 100%;
     height: 100%;
-    background: url(${LayoutSongs[0]}) no-repeat center/cover;
+    background: url(${Songs[0]}) no-repeat center/cover;
     .albums {
       position: absolute;
       top: 50%;
@@ -26,7 +26,7 @@ export const SongsWrapper = styled.div`
           display: block;
           width: 71px;
           height: 369px;
-          background: url(${LayoutSongs[3]}) no-repeat center/cover;
+          background: url(${Songs[3]}) no-repeat center/cover;
         }
         .free-item {
           position: relative;
@@ -58,7 +58,7 @@ export const SongsWrapper = styled.div`
       bottom: 0;
       width: 3.24rem;
       height: 0.97rem;
-      background: url(${LayoutSongs[1]}) no-repeat center/cover;
+      background: url(${Songs[1]}) no-repeat center/cover;
       &::after {
         content: "主菜单";
         color: #342b41;
@@ -69,7 +69,7 @@ export const SongsWrapper = styled.div`
         font-weight: bold;
       }
       &:active {
-        background: url(${LayoutSongs[2]}) no-repeat center/cover;
+        background: url(${Songs[2]}) no-repeat center/cover;
       }
     }
   }

@@ -30,7 +30,7 @@ export const preloadImages = {
     "/image/startup/main_glass.png"
   ],
   // 主页
-  LayoutMain: [
+  Main: [
     "/image/main/bg_light.jpg",
     "/image/main/bg_shadow.png",
     "/image/main/mainmenu/main_musicplay.png",
@@ -49,7 +49,7 @@ export const preloadImages = {
     "/image/main/mainmenu/main_more_pressed.png"
   ],
   // 歌单页
-  LayoutSongs: [
+  Songs: [
     "/image/songs/bg_select_dark.png",
     "/image/songs/back.png",
     "/image/songs/back_pressed.png",
@@ -77,14 +77,14 @@ export const preloadImages = {
 
 export const preloadStore = {
   images: process.env.REACT_APP_ENV === 'production'
-  ? Object.keys(preloadImages).reduce((acc, key) => {
-    const updatedImages = preloadImages[key].map(image => {
-      let updatedImage = image.replace('/image', '/image-min');
-      updatedImage = updatedImage.replace(/.png|.jpg/g, '.webp');
-      return updatedImage;
-    });
-    acc[key] = updatedImages;
-    return acc;
-  }, {})
-  : preloadImages
+    ? Object.keys(preloadImages).reduce((acc, key) => {
+      const updatedImages = preloadImages[key].map(image => {
+        let updatedImage = image.replace('/image', '/image-min');
+        updatedImage = updatedImage.replace(/.png|.jpg/g, '.webp');
+        return updatedImage;
+      });
+      acc[key] = updatedImages;
+      return acc;
+    }, {})
+    : preloadImages
 }
