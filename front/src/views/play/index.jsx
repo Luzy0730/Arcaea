@@ -16,6 +16,7 @@ const Play = memo(() => {
     track: 4,
     noteScore: 4396,
     notes: notes_aff,
+    // notes: [[2222, 1]],
     name: 'Fairytale',
     singer: 'chitose'
   })
@@ -135,15 +136,13 @@ const Play = memo(() => {
 
   // 检测条碰撞检测
   const detectionIsCollision = (index) => {
-    if (!notes.current.length) {
-      const trackPart = tracksRef.current.querySelector(`.track-part:nth-child(${index + 1})`);
-      trackHitEvent(trackPart)
-    } else {
-      notes.current.filter(note => note.index === index + 1).forEach(note => {
-        const hitStatus = collisionDetection(note);
-        noteHitedEvent(note, hitStatus)
-      })
-    }
+    const trackPart = tracksRef.current.querySelector(`.track-part:nth-child(${index + 1})`);
+    trackHitEvent(trackPart)
+    notes.current.filter(note => note.index === index + 1).forEach(note => {
+      if (note.hitedStatus) return
+      const hitStatus = collisionDetection(note);
+      noteHitedEvent(note, hitStatus)
+    })
   }
 
   // 帧动画
