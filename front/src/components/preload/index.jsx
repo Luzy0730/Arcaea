@@ -22,7 +22,7 @@ const Preload = memo(() => {
   }
   useEffect(() => {
     const { pathname } = location
-    const { audios } = preloadStore
+    const { images, audios } = preloadStore
     switch (pathname) {
       case '/':
         break;
@@ -31,10 +31,10 @@ const Preload = memo(() => {
         break;
       default:
         const resources = [
-          preloadStore.images[convertToCamelCase(pathname)],
-          preloadStore.audios[convertToCamelCase(pathname)]
+          images[convertToCamelCase(pathname)] || [],
+          audios[convertToCamelCase(pathname)] || []
         ]
-        preload(resources, () => {
+        preload([resources], () => {
           dispatch(setEffectSwitch(true))
           if (pathname === '/main') dispatch(setAudioBg(audios.Main[0]))
           if (pathname === '/play') dispatch(setAudioBg('/songs/fairytale/base.ogg'))

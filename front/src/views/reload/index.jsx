@@ -17,13 +17,12 @@ const Reload = memo(() => {
     navigate('/start')
   }
   useEffect(() => {
+    const resources = [
+      [...preloadStore.images.Common, ...preloadStore.images.Char, ...preloadStore.images.Startup],
+      preloadStore.audios.Startup
+    ]
     dispatch(preloadResource([
-      [
-        ...preloadStore.images.Common,
-        ...preloadStore.images.Char,
-        ...preloadStore.images.Startup,
-        ...preloadStore.audios.Startup
-      ],
+      resources,
       function (total) {
         console.log('加载完毕:' + total + '个资源');
       },

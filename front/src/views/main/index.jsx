@@ -10,7 +10,7 @@ const Main = memo(() => {
 
   const handleStart = useCallback(() => {
     dispatch(closeSceneShutter(() => {
-      navigate('/song')
+      navigate('/songs')
     }))
   }, [dispatch, navigate])
   return (

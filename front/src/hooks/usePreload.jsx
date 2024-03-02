@@ -23,7 +23,8 @@ function usePreload() {
       } else {
         setAycComplete(true)
       }
-      if (resources) {
+      const hasResource = !!resources.flat().length
+      if (hasResource) {
         dispath(
           preloadResource([resources, () => {
             setResComplete(true)
@@ -33,7 +34,7 @@ function usePreload() {
       } else {
         setResComplete(true)
       }
-      if (!resources && (typeof asyncCb !== 'function')) loadedCloseFn()
+      if (!hasResource && (typeof asyncCb !== 'function')) loadedCloseFn()
     },
     async () => {
       dispath(setSceneShutterState(false))

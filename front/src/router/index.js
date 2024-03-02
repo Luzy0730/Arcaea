@@ -8,7 +8,7 @@ import Play from '@/views/play/index.jsx'
 
 const LayoutRoutes = [
   { path: '/main', element: <Main /> },
-  { path: '/song', element: <Song /> }
+  { path: '/songs', element: <Song /> }
 ]
 
 const blankRoutes = [
