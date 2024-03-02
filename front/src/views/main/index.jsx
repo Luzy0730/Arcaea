@@ -21,7 +21,7 @@ const Main = memo(() => {
       <div className='main-menu'>
         <div className='world-place'></div>
         <div className='world'></div>
-        <div className='start-game new' onClick={() => handleStart()}>开始游戏</div>
+        <div className='start-game new' onClick={handleStart}>开始游戏</div>
         <div className='story-mode'>故事模式</div>
         <div className='challenge'>段位挑战</div>
         <div className='other'>其他</div>

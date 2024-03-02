@@ -39,7 +39,7 @@ function usePreload() {
       dispath(setSceneShutterState(false))
       dispath(changeSceneShutterZIndex(false))
       if (typeof resolveFn === 'function') await resolveFn()
-    }])), [aycComplete, dispath, resComplete,])
+    }])), [aycComplete, dispath, resComplete])
 }
 
 export default usePreload;

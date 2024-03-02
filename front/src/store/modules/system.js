@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import preloadStore from '@/config/resource.config'
 import { systemConfig } from '@/config/arcaea.config';
 import ResLoader from '@/utils/ResLoader'
 
@@ -108,10 +109,14 @@ const systemSlice = createSlice({
     sceneShutterState: false,
     resourceLoadedZIndex: 0,
     resourceLoadedState: false,
-    effectSwitch: false
+    effectSwitch: false,
+    audioEffect: null,
+    audioBg: null
   },
   reducers: {
     setSceneShutterState(state, action) {
+      const { audios } = preloadStore
+      state.audioEffect = audios.Startup[action.payload ? 0 : 1]
       state.sceneShutterState = action.payload;
     },
     setResourceLoadedState(state, action) {
@@ -126,9 +131,12 @@ const systemSlice = createSlice({
     setEffectSwitch(state, action) {
       state.effectSwitch = action.payload;
     },
+    setAudioBg(state, action) {
+      state.audioBg = action.payload
+    }
   },
 })
 
-export const { setSceneShutterState, setResourceLoadedState, setSceneShutterZIndex, setResourceLoadedZIndex, setEffectSwitch } = systemSlice.actions
+export const { setSceneShutterState, setResourceLoadedState, setSceneShutterZIndex, setResourceLoadedZIndex, setEffectSwitch, setAudioBg } = systemSlice.actions
 
 export default systemSlice.reducer

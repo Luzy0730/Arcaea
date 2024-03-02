@@ -1,4 +1,4 @@
-import { preloadStore } from '@/config/resource.config'
+import preloadStore from '@/config/resource.config'
 import styled from "styled-components";
 const { Play } = preloadStore.images
 

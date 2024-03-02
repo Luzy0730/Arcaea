@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { preloadStore } from '@/config/resource.config'
+import preloadStore from '@/config/resource.config'
 import { preloadResource } from '@/store/modules/system'
 
 const Reload = memo(() => {
@@ -12,16 +12,20 @@ const Reload = memo(() => {
   })
 
   const dispatch = useDispatch()
+  const enterGame = (event) => {
+    event.stopPropagation();
+    navigate('/start')
+  }
   useEffect(() => {
     dispatch(preloadResource([
       [
         ...preloadStore.images.Common,
         ...preloadStore.images.Char,
-        ...preloadStore.images.Startup
+        ...preloadStore.images.Startup,
+        ...preloadStore.audios.Startup
       ],
       function (total) {
         console.log('加载完毕:' + total + '个资源');
-        navigate('/start')
       },
       function (total) {
         setDuration(preDuration => {
@@ -40,6 +44,7 @@ const Reload = memo(() => {
     <div>
       加载图片资源...
       {duration.current + '/' + duration.total}
+      {duration.current === duration.total && <button onClick={enterGame}>进入</button>}
     </div>
   )
 })

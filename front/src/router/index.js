@@ -36,4 +36,6 @@ const getPathList = (routes, rootPath = '') => {
 // 空白布局
 export const blankPages = getPathList(blankRoutes)
 
-export default [...LayoutRoutes, ...blankRoutes]
+const routes = [...LayoutRoutes, ...blankRoutes]
+
+export default routes

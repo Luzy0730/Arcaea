@@ -1,11 +1,11 @@
 import React, { memo, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { setEffectSwitch } from '@/store/modules/system'
+import { setEffectSwitch, setAudioBg } from '@/store/modules/system'
 import SceneShutter from './c-cpns/sceneShutter'
 import ResourceLoaded from './c-cpns/resourceLoaded'
 import usePreload from '@/hooks/usePreload'
-import { preloadStore } from '@/config/resource.config'
+import preloadStore from '@/config/resource.config'
 
 const Preload = memo(() => {
   const dispatch = useDispatch()
@@ -22,13 +22,22 @@ const Preload = memo(() => {
   }
   useEffect(() => {
     const { pathname } = location
+    const { audios } = preloadStore
     switch (pathname) {
       case '/':
+        break;
       case '/start':
+        dispatch(setAudioBg(audios.Startup[2]))
         break;
       default:
-        preload([preloadStore.images[convertToCamelCase(pathname)]], () => {
+        const resources = [
+          preloadStore.images[convertToCamelCase(pathname)],
+          preloadStore.audios[convertToCamelCase(pathname)]
+        ]
+        preload(resources, () => {
           dispatch(setEffectSwitch(true))
+          if (pathname === '/main') dispatch(setAudioBg(audios.Main[0]))
+          if (pathname === '/play') dispatch(setAudioBg('/songs/fairytale/base.ogg'))
         })
     }
   }, [location, preload, dispatch])

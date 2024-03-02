@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { preloadStore } from '@/config/resource.config'
+import preloadStore from '@/config/resource.config'
 const { Startup } = preloadStore.images
 
 export const StartupWrapper = styled.div`

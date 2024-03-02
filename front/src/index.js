@@ -17,13 +17,11 @@ import store from './store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Suspense fallback="loading...">
-    <Provider store={store}>
-      <BrowserRouter>
-        <StyleSheetManager shouldForwardProp={isPropValid}>
-          <AutoScreen Elem={App} />
-        </StyleSheetManager>
-      </BrowserRouter>
-    </Provider>
-  </Suspense>
+  <Provider store={store}>
+    <BrowserRouter>
+      <StyleSheetManager shouldForwardProp={isPropValid}>
+        <AutoScreen Elem={App} />
+      </StyleSheetManager>
+    </BrowserRouter>
+  </Provider>
 );

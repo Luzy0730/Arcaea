@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { closeSceneShutter, setEffectSwitch } from '@/store/modules/system'
 import { SongsWrapper } from './style'
-import { preloadStore } from '@/config/resource.config'
+import preloadStore from '@/config/resource.config'
 const { Songs } = preloadStore.images
 
 const Song = memo(() => {

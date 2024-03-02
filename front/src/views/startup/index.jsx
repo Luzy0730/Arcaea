@@ -11,6 +11,7 @@ const index = memo(() => {
     dispatch(closeSceneShutter(() => {
       navigate('/main')
     }))
+    window.removeEventListener('click', startGame)
   }, [dispatch, navigate])
 
   useEffect(() => {

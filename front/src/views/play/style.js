@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { systemConfig } from '@/config/arcaea.config';
-import { preloadStore } from '@/config/resource.config'
+import preloadStore from '@/config/resource.config'
 const { Play } = preloadStore.images
 
 export const PlayWrapper = styled.div`

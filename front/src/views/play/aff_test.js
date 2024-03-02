@@ -1,4 +1,4 @@
-export default [[2222, 1],
+const aff = [[2222, 1],
 [2222, 4],
 [2380, 2],
 [2539, 3],
@@ -305,3 +305,4 @@ export default [[2222, 1],
 [113650, 1],
 [113650, 3]
 ]
+export default aff

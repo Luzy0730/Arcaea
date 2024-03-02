@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from 'react'
+import React, { memo, useEffect, useState, Suspense } from 'react'
 import { useRoutes, useLocation } from 'react-router-dom'
 import { LayoutWrapper } from './style'
 import routes, { blankPages } from '../router/index'
@@ -13,7 +13,9 @@ const Layout = memo(() => {
 
   return (
     <LayoutWrapper>
-      {useRoutes(routes)}
+      <Suspense fallback="loading...">
+        {useRoutes(routes)}
+      </Suspense>
       {
         !isBlank && <>
           <div className='layout'>

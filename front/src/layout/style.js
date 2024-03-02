@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { preloadStore } from '@/config/resource.config'
+import preloadStore from '@/config/resource.config'
 const { Common, Char } = preloadStore.images
 
 export const LayoutWrapper = styled.div`

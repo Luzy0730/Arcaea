@@ -1,4 +1,4 @@
-export const preloadImages = {
+const preloadImages = {
   // 公共图片
   Common: [
     "/image/layouts/loaded/activity_icon.png",
@@ -74,8 +74,19 @@ export const preloadImages = {
   ]
 }
 
+const preloadAudio = {
+  Main: [
+    "/audio/main/bgm_full.ogg",
+  ],
+  Startup: [
+    "/audio/startup/shutter_close.wav",
+    "/audio/startup/shutter_open.wav",
+    "/audio/startup/finale_start_full.ogg",
+  ]
+}
 
-export const preloadStore = {
+
+const preloadStore = {
   images: process.env.REACT_APP_ENV === 'production'
     ? Object.keys(preloadImages).reduce((acc, key) => {
       const updatedImages = preloadImages[key].map(image => {
@@ -86,5 +97,8 @@ export const preloadStore = {
       acc[key] = updatedImages;
       return acc;
     }, {})
-    : preloadImages
+    : preloadImages,
+  audios: preloadAudio
 }
+
+export default preloadStore
